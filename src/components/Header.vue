@@ -9,7 +9,7 @@ import Search from './Search.vue';
             <LogoIcon class="icon" />
         </a>
 
-        <Search search="" />
+        <Search/>
 
         <article class="flex gap-5">
             <a href="/login" class="loginBtn">Login</a>
