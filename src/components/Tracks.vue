@@ -1,16 +1,16 @@
 <template>
-    <article class="tracks">
-        {{ props.trackList }}
-        <button @click="console.log(trackList)">asdasd</button>
-        <TrackItem v-for="track in trackList" @click="console.log(tracks)">
-            <template #author>Луверанс</template>
-            <template #trackName>Душа моя</template>
+    <article class="tracks" v-show="trackList.length > 0">
+        <TrackItem 
+        v-for="track in trackList"
+        :imageUrl="track.image">
+            <template #author>{{ track.name }}</template>
+            <template #trackName>{{ track.artist }}</template>
         </TrackItem>
     </article>
 </template>
 
 <script setup>
-import TrackItem from "./TrackItem.vue";
+import TrackItem from "./SearchTrackItem.vue";
 const props = defineProps({
     trackList: {
         type: Array,
